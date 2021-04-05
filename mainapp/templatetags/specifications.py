@@ -53,9 +53,12 @@ def get_product_spector(product, model_name):
 @register.filter
 def product_spec(product):
     model_name = product.__class__._meta.model_name
-    # if model_name == 'smartphone':
-    #     if not product.sd:
-    #         PRODUCT_SPECTOR["smartphone"].pop('Максимальный Объем Sd')
+    if model_name == 'smartphone':
+        if not product.sd and 'Максимальный Объем Sd' in PRODUCT_SPECTOR["smartphone"]:
+            PRODUCT_SPECTOR["smartphone"].pop('Максимальный Объем Sd')
+        else:
+             PRODUCT_SPECTOR["smartphone"]['Максимальный Объем Sd'] = "sd_volume_max"
+
     # if isinstance(product, Smartphone):
     #     if not sd:
     #         PRODUCT_SPECTOR["smartphone"].pop("Максимальный Объем Sd")

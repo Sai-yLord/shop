@@ -122,11 +122,11 @@ class Smartphone(Product):
     #         return 'да'
     #     return 'нет'
 
-    def get_sd_volume_max(self):
-        if self.sd:
-            return sd_volume_max
-        else:
-            return None    
+    # def get_sd_volume_max(self):
+    #     if self.sd:
+    #         return sd_volume_max
+    #     else:
+    #         return None    
 
 class CartProduct(models.Model):
 
