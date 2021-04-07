@@ -3,5 +3,21 @@
 {% block content %}
 
 {{ category.name }}
+<!-- <div class="row">
+    {% for product in category.products %}
+    <div class="col-lg-4 col-md-6 mb-4">
+      <div class="card h-100">
+        <a href="{{ product.get_absolute_url }}"><img class="card-img-top" height="200px" src="{{ product.image.url }}" alt=""></a>
+        <div class="card-body">
+          <h4 class="card-title">
+            <a href="{{ product.get_absolute_url }}">{{ product.title }}</a>
+          </h4>
+          <h5>{{ product.price }} сом.</h5>
+        </div>
+      </div>
+    </div>
+    {% endfor %}
+</div> -->
+{{ category_products }}
 
 {% endblock %}
